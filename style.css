@@ -16,8 +16,7 @@ header {
 nav {
 	position: absolute;
 	top: 110px;
-	right: 0;
-	
+	right: 0;	
 }
 
 nav li{
@@ -31,20 +30,17 @@ nav a {
 	font-weight: bold;
 	font-size: 22px;
 	text-decoration: none;
-
 }
 
 nav a:hover {
 	color: #c78c19;
 	text-decoration: underline;
-
 }
 
 .produtos {
 	width: 940px;
 	margin: 0 auto;
 	padding: 50px 0;
-
 }
 
 .produtos li {
@@ -57,8 +53,7 @@ nav a:hover {
 	padding: 30px 20px;
 	box-sizing: border-box;
 	border: 2px solid; #000000;
-	border-radius: 5%;
-	
+	border-radius: 5%;	
 }
 
 .produtos li:hover{
@@ -102,10 +97,6 @@ footer {
 	padding: 10px;
 } 
 
-main {
-	width: 940px;
-	margin: 0 auto;
-}
 form {
 	margin: 40px 0;
 	
@@ -174,9 +165,26 @@ td, th {
 	clear: left;
 }
 
+/* Só por curiosidade 
+
+.titulo-principal:first-letter {
+	font-weight: bold;
+}
+
+.titulo-principal:before {
+	content:"[" ;
+}
+
+.titulo-principal:after {
+	content: "]";
+}
+
+*/
 .principal {
 	padding: 3em 0;
-	background: #fffffa;
+	background: #FEFEFE;
+	width: 940px;
+	margin: 0 auto;
 }
 
 .principal p {
@@ -195,11 +203,16 @@ td, th {
 	width: 120px;
 	float: left;
 	margin: 0 20px 20px 0;
-
 }
 
 .map {
 	padding: 3em 0;
+	background: linear-gradient(#FEFEFE, #888888);
+}
+
+.map-conteudo {
+	width: 940px;
+	margin: 0 auto;
 }
 
 .map p {
@@ -215,7 +228,6 @@ td, th {
 .conteudo-beneficios{
 	width: 640px;
 	margin: 0 auto;
-
 }
 
 .lista-beneficios{
@@ -226,7 +238,14 @@ td, th {
 
 .imagem-beneficios {
 	width: 60%;
-	
+	opacity: 1;
+	transition: 400ms;
+	box-shadow: 10px 10px 5px 5px #000000;	
+	border-radius: 5px;
+}
+
+.imagem-beneficios:hover{
+	opacity: 0.8;
 }
 
 .itens {
@@ -237,9 +256,77 @@ td, th {
 	font-weight: bold;
 }
 
-
+.itens:before{
+	content: "✯";
+}
 
 .video {
 	width: 560px;
 	margin: 2em auto;
+}
+/* Uso de seletores avançados em CSS! 
+
+Apenas o primeiro paragrafo filho recebera a atribuição 
+main > p{
+	background: red;
+}
+
+todos os paragrafos logo após uma imagem recebem atribuição
+img + p {
+	background: green;
+}
+
+Seletor avançado ~ pega todos os seletores apos uma img
+img ~ p {
+	background: gray;
+}
+
+seletor excludente, tudo que não é #missao receberá a atribuição
+.principal p:not(#missao){
+	background: green;
+} */
+@media screen and (max-width: 480px) {
+	.caixa, .principal, .conteudo-beneficios, .map-conteudo {
+	width: auto;
+	}
+
+	main {
+		width: auto;
+	}
+
+	
+	main .video{
+		width: 100%;
+		background: ;
+	}
+
+	.conteudo-beneficios {
+		display: block;
+	}
+
+	.imagem-beneficios {
+		width: 100%;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	nav {
+		position: static;
+	}
+
+	
+	/* Dá pra chamar isso de gambiarra? kkkk */
+	.produtos {
+		width: auto;
+	}
+
+	.produtos li {
+		display: block;
+		width: auto;
+	}
+
+
+
 }
